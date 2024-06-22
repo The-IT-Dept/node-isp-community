@@ -43,9 +43,5 @@ echo "Store the following values in a safe place. If you lose the App Key, you w
 echo "App Key: $app_key"
 echo "DB Password: $db_password"
 
-echo
-echo "Please configure the mail settings in the .env file before starting the application, if required."
-echo
-
 echo "Environment setup is complete. Please run 'docker compose up -d' to start the application."
 echo "Once booted, you can access the application at https://$domain_name/admin/ which will guide you through the setup process."
