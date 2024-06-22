@@ -1,4 +1,5 @@
-<p align="center"><a href="https://theitdept.au" target="_blank"></a></p>
+<p align="center"><a href="https://theitdept.au" target="_blank"><img src="https://raw.githubusercontent.com/node-isp/node-isp/main/assets/logo.svg" width="400" alt="Node ISP Logo"></a></p>
+
 
 # Node ISP
 
