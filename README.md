@@ -1,10 +1,5 @@
 <p align="center"><a href="https://theitdept.au" target="_blank"><img src="https://raw.githubusercontent.com/node-isp/node-isp/main/assets/logo.svg" width="400" alt="Node ISP Logo"></a></p>
 
-
-# Node ISP
-
-Building blocks for a modern Internet Service Provider.
-
 ## Introduction
 
 Node ISP is a collection of services and tools to help you build a modern Internet Service Provider. The project is
