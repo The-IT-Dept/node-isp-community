@@ -57,7 +57,7 @@ sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 
 # Clone the NodeISP deployment repository
 cd /opt/
-git clone https://github.com/The-IT-Dept/node-isp-deploy.git nodeisp
+git clone https://github.com/node-isp/node-isp.git nodeisp
 
 
 # Run the configuration script, answer the questions and wait for the script to finish

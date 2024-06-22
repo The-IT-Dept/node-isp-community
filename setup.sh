@@ -34,15 +34,6 @@ echo "NODEISP_LICENCE_KEY_CODE=$license_key_code" >> .env
 echo "DB_PASSWORD=$db_password" >> .env
 echo "DB_DATABASE=nodeisp" >> .env
 
-echo "MAIL_MAILER=smtp" >> .env
-echo "MAIL_HOST=" >> .env
-echo "MAIL_PORT=" >> .env
-echo "MAIL_USERNAME=" >> .env
-echo "MAIL_PASSWORD=" >> .env
-echo "MAIL_ENCRYPTION=tls" >> .env
-echo "MAIL_FROM_ADDRESS=" >> .env
-echo "MAIL_FROM_NAME=\"$company_name\"" >> .env
-
 echo "SERVICES_GOOGLE_MAPS_API_KEY=" >> .env
 
 echo
