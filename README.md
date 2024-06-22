@@ -8,11 +8,11 @@ designed to be modular, and you can choose to deploy only the services you need.
 ## Bugs
 
 Please report any bugs or feature requests to
-the [issue tracker](https://github.com/The-IT-Dept/node-isp-community/issues/new/choose).
+the [issue tracker](https://github.com/node-isp/node-isp/issues/new/choose).
 
 ## Feature Requests
 
-Please start a new discussion in the [discussions](https://github.com/The-IT-Dept/node-isp-community/discussions)
+Please start a new discussion in the [discussions](https://github.com/node-isp/node-isp/discussions)
 section.
 
 ## Usage
