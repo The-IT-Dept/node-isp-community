@@ -1,16 +1,6 @@
 version: "3.9"
 
 services:
-  caddy:
-    image: lucaslorentz/caddy-docker-proxy:ci-alpine
-    ports:
-      - 80:80
-      - 443:443
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - caddy_data:/data
-    restart: unless-stopped
-
   licence_client:
     image: ghcr.io/node-isp/licence-client:v0.0.2
     container_name: nodeisp-licence-client
