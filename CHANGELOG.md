@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/node-isp/node-isp/compare/v1.0.2...v1.0.3) (2024-06-26)
+
+
+### Bug Fixes
+
+* beasier updating releases ([f0f8449](https://github.com/node-isp/node-isp/commit/f0f8449e793d1464225cb2f5f3045213711c75cb))
+
 ## [1.0.2](https://github.com/node-isp/node-isp/compare/v1.0.1...v1.0.2) (2024-06-26)
 
 
