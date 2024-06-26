@@ -252,12 +252,12 @@ var nodeispdService []byte
 
 func setupService() {
 	// Write the service file
-	err := os.WriteFile("/etc/systemd/system/nodeispd.service", nodeispdService, 0644)
+	err := os.WriteFile("/etc/systemd/system/nodeisp.service", nodeispdService, 0644)
 	if err != nil {
 		log.Fatalf("Failed to write service file: %s", err)
 	}
 
-	fmt.Println("Service file written to /etc/systemd/system/nodeispd.service")
+	fmt.Println("Service file written to /etc/systemd/system/nodeisp.service")
 
 	// Reload systemd
 	err = exec.Command("systemctl", "daemon-reload").Run()
@@ -268,7 +268,7 @@ func setupService() {
 	fmt.Println("Systemd reloaded")
 
 	// Enable the service
-	err = exec.Command("systemctl", "enable", "nodeispd").Run()
+	err = exec.Command("systemctl", "enable", "nodeisp").Run()
 	if err != nil {
 		log.Fatalf("Failed to enable service: %s", err)
 	}
@@ -276,7 +276,7 @@ func setupService() {
 	fmt.Println("Service enabled")
 
 	// Start the service
-	err = exec.Command("systemctl", "start", "nodeispd").Run()
+	err = exec.Command("systemctl", "start", "nodeisp").Run()
 	if err != nil {
 		log.Fatalf("Failed to start service: %s", err)
 	}
