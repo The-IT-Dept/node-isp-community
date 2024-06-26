@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/node-isp/node-isp/compare/v1.0.4...v1.0.5) (2024-06-26)
+
+
+### Bug Fixes
+
+* move appserver to octane ([ce0b38d](https://github.com/node-isp/node-isp/commit/ce0b38d7eddfc99c12afbc524d42fbdb527d0a6e))
+
 ## [1.0.4](https://github.com/node-isp/node-isp/compare/v1.0.3...v1.0.4) (2024-06-26)
 
 
