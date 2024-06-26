@@ -93,6 +93,13 @@ func (m *Manager) EnsureService(ctx context.Context, s *Service) error {
 	return m.ensureRunning(ctx, s.Name)
 }
 
+// ListContainers lists all containers from the manager
+func (m *Manager) ListContainers(ctx context.Context) ([]types.Container, error) {
+	return m.d.ContainerList(ctx, container.ListOptions{All: true, Filters: filters.NewArgs(
+		filters.Arg("label", "app=nodeisp"),
+	)})
+}
+
 func (m *Manager) ensureRunning(ctx context.Context, name string) error {
 	svc, ok := m.Services[name]
 	if !ok {

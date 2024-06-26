@@ -403,6 +403,15 @@ func (s *Server) Run() {
 	// TODO: GRPC server for CLI, with version upgrades and stuff
 	// TODO: Metrics server fun time Let the client daemon get stats, and check for updates, and push updated images
 
+	// start GRPC server
+	grpc := &grpcServer{
+		docker: docker,
+		mgr:    mgr,
+		u:      u,
+	}
+
+	go grpc.Run()
+
 	<-ctx.Done()
 	s.Log.Info("shutting down Node ISP")
 }

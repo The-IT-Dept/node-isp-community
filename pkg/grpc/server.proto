@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package grpc;
+
+option go_package = "github.com/node-isp/node-isp/pkg/grpc";
+
+import "google/protobuf/timestamp.proto";
+
+
+service NodeISPService {
+  rpc GetStatus(GetStatusRequest) returns (GetStatusResponse);
+  rpc GetVersion(GetVersionRequest) returns (GetVersionResponse);
+}
+
+message Service {
+  string name = 1;
+  string container = 2;
+  string status = 3;
+  string image = 4;
+  google.protobuf.Timestamp started = 5;
+}
+
+message GetStatusRequest {
+}
+
+message GetStatusResponse {
+  repeated Service services = 1;
+}
+
+message GetVersionRequest {
+}
+
+message GetVersionResponse {
+  string currentVersion = 1;
+  string latestVersion = 2;
+  bool updateAvailable = 3;
+}
