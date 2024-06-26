@@ -310,7 +310,7 @@ func (s *Server) Run() {
 		"8080/tcp": {},
 	}
 
-	appServer.Entrypoint = []string{"frankenphp", "run", "--config", "/etc/caddy/Caddyfile"}
+	appServer.Entrypoint = []string{"php", "artisan", "octane:start", "--host=0.0.0.0", "--port=8080"}
 
 	if err := mgr.EnsureService(ctx, appServer); err != nil {
 		s.Log.WithError(err).Fatal("Failed to start app server")
