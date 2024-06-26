@@ -10,7 +10,6 @@ builds:
     binary: nodeispd
     goos:
       - linux
-      - darwin
 
     goarch:
       - amd64
@@ -36,6 +35,21 @@ builds:
     mod_timestamp: "{{ .CommitTimestamp }}"
     ldflags:
       - -s -w -X github.com/node-isp/node-isp/pkg/version.Version={{.Version}} -X github.com/node-isp/node-isp/pkg/version.Commit={{.Commit}} -X github.com/node-isp/node-isp/pkg/version.BuildDate={{ .CommitDate }}
+
+archives:
+  - id: nodeisp
+    name_template: "{{ .Binary }}_{{ .Os }}_{{ .Arch }}"
+    builds:
+      - nodeisp
+    format: binary
+    files: [ ]
+
+  - id: nodeispd
+    name_template: "{{ .Binary }}_{{ .Os }}_{{ .Arch }}"
+    builds:
+      - nodeispd
+    format: binary
+    files: [ ]
 
 # create a source tarball
 source:
