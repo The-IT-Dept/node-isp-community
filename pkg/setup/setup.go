@@ -130,6 +130,9 @@ func Run() error {
 
 	logDir, _ := logDirPrompt.Run()
 
+	os.MkdirAll(storageDir, 0755)
+	os.MkdirAll(logDir, 0755)
+
 	// Generate the server configuration, and show the user the configuration
 	// before saving it to disk
 
@@ -232,6 +235,8 @@ func Run() error {
 
 			fmt.Println("NodeISP setup complete 🚀🚀🚀")
 			fmt.Println("NodeISP is now running as a service. You can access the admin interface at https://" + lic.Domain + "/admin")
+			fmt.Printf("Your App Key is: '%s'. Store this in a safe place, if you lose it, your data will be gone forever \r\n", key)
+
 			return nil
 		}
 	}
