@@ -247,7 +247,7 @@ func Run() error {
 	return nil
 }
 
-//go:embed nodeispd.service
+//go:embed nodeisp.service
 var nodeispdService []byte
 
 func setupService() {

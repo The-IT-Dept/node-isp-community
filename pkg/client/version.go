@@ -34,3 +34,7 @@ func VersionCmd(ctx context.Context, _ *cli.Command) error {
 	return nil
 
 }
+
+func UpdateCmd(ctx context.Context, command *cli.Command) error {
+	return fmt.Errorf("not implemented")
+}

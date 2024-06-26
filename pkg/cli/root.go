@@ -14,11 +14,10 @@ var RootCommand = &cli.Command{
 	Flags: []cli.Flag{
 		ConfigFlag,
 	},
-	Commands: []*cli.Command{
+	Commands: append([]*cli.Command{
 		SetupCommand,
 		ServerCommand,
-		ClientCommand,
-	},
+	}, ClientCommands...),
 }
 
 var ConfigFlag = &cli.StringFlag{

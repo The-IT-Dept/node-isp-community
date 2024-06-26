@@ -37,3 +37,11 @@ func StatusCmd(ctx context.Context, _ *cli.Command) error {
 	return nil
 
 }
+
+func RestartAllCmd(ctx context.Context, command *cli.Command) error {
+	return fmt.Errorf("not implemented")
+}
+
+func RestartServiceCmd(ctx context.Context, command *cli.Command) error {
+	return fmt.Errorf("not implemented")
+}
