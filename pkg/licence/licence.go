@@ -47,10 +47,14 @@ func New(id, code string) (*Licence, error) {
 		return nil, err
 	}
 
-	// Start a goroutine to refresh the licence every 24 hours
+	// Start a goroutine to refresh the licence every 12 hours
 	go func() {
-		for {
+		ticker := time.NewTicker(12 * time.Hour)
+		defer ticker.Stop()
+
+		for range ticker.C {
 			log.WithField("component", "licence").Info("refreshing licence")
+
 			// refresh the licence
 			if err := l.validate(); err != nil {
 				l.log.WithError(err).Error("failed to refresh licence")
@@ -58,7 +62,6 @@ func New(id, code string) (*Licence, error) {
 
 			l.log.Info("licence refreshed")
 
-			time.Sleep(12 * time.Hour)
 		}
 	}()
 

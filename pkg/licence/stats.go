@@ -36,7 +36,10 @@ func (l *Licence) StartStatsReporter(dbHost,
 
 	// Start a goroutine to process stats every 12 hours
 	go func() {
-		for {
+		ticker := time.NewTicker(1 * time.Hour)
+		defer ticker.Stop()
+
+		for range ticker.C {
 			// process stats
 			l.log.Info("sending usage statistics to the licence server")
 
@@ -67,8 +70,6 @@ func (l *Licence) StartStatsReporter(dbHost,
 			}
 
 			l.log.WithField("stats", fmt.Sprintf("%+v", s)).Info("usage statistics sent to the licence server")
-
-			time.Sleep(12 * time.Hour)
 		}
 	}()
 

@@ -33,7 +33,10 @@ func (u *Updater) Start() (<-chan Update, error) {
 	updates := make(chan Update)
 
 	go func() {
-		for {
+		ticker := time.NewTicker(1 * time.Hour)
+		defer ticker.Stop()
+
+		for range ticker.C {
 			l.Info("Checking for updates...")
 			latestVersion, err := u.LatestAppVersion()
 
@@ -65,9 +68,6 @@ func (u *Updater) Start() (<-chan Update, error) {
 			} else {
 				l.WithField("service", "app").WithField("current", currentVersion.String()).WithField("latest", latestVersion.String()).Info("No updates available")
 			}
-
-			// Sleep for 12 hours
-			time.Sleep(1 * time.Hour)
 		}
 	}()
 

@@ -5,6 +5,7 @@ import (
 	"context"
 	"errors"
 	"io"
+	"os"
 	"path/filepath"
 	"strings"
 	"sync"
@@ -98,7 +99,7 @@ func (m *Manager) ensureRunning(ctx context.Context, name string) error {
 		return errors.New("service not found")
 	}
 
-	ctx, cancel := context.WithTimeout(ctx, 20*time.Second)
+	ctx, cancel := context.WithTimeout(ctx, 180*time.Second)
 	defer cancel()
 
 	// Find the container, if it exists
@@ -167,7 +168,7 @@ func (m *Manager) ensureRunning(ctx context.Context, name string) error {
 		}
 		defer reader.Close()
 
-		_, _ = io.Copy(io.Discard, reader)
+		_, _ = io.Copy(os.Stdout, reader)
 		svc.log.Info("creating container")
 
 		resp, err := m.d.ContainerCreate(ctx, &container.Config{
