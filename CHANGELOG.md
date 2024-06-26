@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.6](https://github.com/node-isp/node-isp/compare/v1.0.5...v1.0.6) (2024-06-26)
+
+
+### Bug Fixes
+
+* better cmd layout ([09e7030](https://github.com/node-isp/node-isp/commit/09e703070d447c37a5b70575f545ec984e786f97))
+* move to single binary ([70e7f8c](https://github.com/node-isp/node-isp/commit/70e7f8cf3ae4ac98135b2d732b1067242262f682))
+
 ## [1.0.5](https://github.com/node-isp/node-isp/compare/v1.0.4...v1.0.5) (2024-06-26)
 
 
